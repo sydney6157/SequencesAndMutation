@@ -65,6 +65,13 @@ def RETURN_delete_negatives(numbers):
       :type numbers: list
     where the list is a list of numbers.
     """
+    new = []
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            new = new + []
+        else:
+            new = new + [numbers[k]]
+    return new
     # TODO: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
@@ -124,6 +131,9 @@ def MUTATE_delete_negatives(numbers):
 
     Precondition: The argument is a list of numbers.
     """
+    for k in range(len(numbers) - 1, -1, -1):
+        if numbers[k] < 0:
+            numbers.pop(k)
     # TODO: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
